@@ -1,0 +1,120 @@
+How to use:
+	(1)angle:
+		$("#img").rotate(45);
+		or
+		$("#img").rotate({angle:45});
+		
+	(2)animateTo:
+		$("#img").rotate({
+			bind:{
+			    click: function(){
+			   		$(this).rotate({
+			    		angle: 0,
+			    		animateTo:180
+			        })
+		    	}
+		    }
+		});
+		
+	(3)transform-origin:
+		$("#img").rotate({
+			bind: {
+				click: function() {
+					$(this).rotate({
+						angle: 0,
+						center: ["50%", "100%"],
+						animateTo: 180
+					})
+				}
+			}
+		});
+	
+	(4)duration:
+		$("#img").rotate({
+			bind: {
+				click: function() {
+					$(this).rotate({
+						angle: 0,
+						center: ["50%", "100%"],
+						animateTo: 180,
+						duration: 6000
+					})
+				}
+			}
+		});
+		
+	(5)easing:
+		$("#img").rotate({
+			bind: {
+				click: function() {
+					$(this).rotate({
+						angle: 0,
+						center: ["50%", "100%"],
+						animateTo: 180,
+						duration: 6000,
+						easing: $.easing.easeInOutElastic
+					})
+				}
+			}
+		});
+	
+	(6)callback:
+		$("#img").rotate({
+			bind: {
+				click: function() {
+					$(this).rotate({
+						angle: 0,
+						center: ["50%", "100%"],
+						animateTo: 180,
+						duration: 6000,
+						easing: $.easing.easeInOutElastic,
+						callback: function() {
+							console.log("done!")
+						}
+					})
+				}
+			}
+		});
+		
+	(7)getRotateAngle()  --return current angle of rotated object,not the rotate done!
+		$("#img").rotate({
+			angle: 45,
+			bind: {
+				click: function() {
+					console.log($(this).getRotateAngle());
+				}
+			}
+		});
+	
+	(8)stopRotate()
+		$("#img").rotate({
+			bind: {
+				click: function() {
+					$("#img").rotate({
+						angle: 0,
+						animateTo: 180,
+						duration: 6000
+					});
+					setTimeout(function() {
+						$("#img").stopRotate();
+					}, 1000);
+				}
+			}
+		});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	  
